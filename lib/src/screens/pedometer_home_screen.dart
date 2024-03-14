@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthtrack/src/widgets/pedometer_appbar.dart';
 import 'package:healthtrack/src/widgets/pedometer_bottom_navigation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,12 +7,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Health Track'),
-      ),
-      bottomNavigationBar: const PedoMeterBottomNavigation(),
-      body: const Center(
+    return const Scaffold(
+      appBar: PedometerAppBar(),
+      bottomNavigationBar: PedoMeterBottomNavigation(),
+      body: Center(
         child: Text('Welcome to Health Track'),
       ),
     );

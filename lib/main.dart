@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthtrack/src/screens/home_screen.dart';
+import 'package:healthtrack/src/screens/pedometer_home_screen.dart';
 import 'package:healthtrack/themes/light_theme.dart';
 
 void main() {

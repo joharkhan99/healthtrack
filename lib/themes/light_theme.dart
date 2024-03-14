@@ -11,4 +11,12 @@ ThemeData lightTheme = ThemeData(
     unselectedLabelStyle: TextStyle(color: Colors.grey, fontSize: 12),
     showUnselectedLabels: true,
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 12, color: Colors.white),
+      backgroundColor: Colors.green,
+      foregroundColor: Colors.white,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+    ),
+  ),
 );
