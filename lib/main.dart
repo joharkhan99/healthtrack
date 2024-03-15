@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthtrack/src/screens/pedometer_home_screen.dart';
+import 'package:healthtrack/src/screens/pedometer_screen.dart';
 import 'package:healthtrack/themes/light_theme.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Health Track',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      home: const PedometerHomeScreen(),
+      home: const PedometerScreen(),
     );
   }
 }
