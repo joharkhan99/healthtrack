@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthtrack/src/models/bar_chart_data.dart';
 import 'package:healthtrack/src/widgets/charts/pedometer_bar_chart.dart';
 
 class PedometerReport extends StatelessWidget {

@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-
-class BarChartData {
-  final String label;
-  final int value;
-
-  BarChartData(this.label, this.value);
-}
+import 'package:healthtrack/src/models/bar_chart_data.dart';
 
 List<charts.Series<BarChartData, String>> _createSeries(List<BarChartData> data) {
   return [
