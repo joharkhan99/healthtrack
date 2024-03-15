@@ -5,16 +5,16 @@ import 'package:healthtrack/src/widgets/pedometer_liquid_progress.dart';
 import 'package:healthtrack/src/widgets/pedometer_statsbar.dart';
 import 'package:healthtrack/src/widgets/pedometer_weekday_stats.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PedometerHomeScreen extends StatelessWidget {
+  const PedometerHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
-      appBar: PedometerAppBar(),
+      appBar: const PedometerAppBar(),
       bottomNavigationBar: PedoMeterBottomNavigation(),
-      body: Center(
+      body: const Center(
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),

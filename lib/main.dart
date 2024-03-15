@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Health Track',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
-      home: const HomeScreen(),
+      home: const PedometerHomeScreen(),
     );
   }
 }
