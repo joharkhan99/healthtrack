@@ -17,12 +17,47 @@ class PedometerReport extends StatelessWidget {
       BarChartData('S', 8524),
     ];
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.4,
-          child: PedometerBarChart(chartData),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          bottom: const PreferredSize(
+            preferredSize: Size.fromHeight(0),
+            child: TabBar(
+              labelPadding: EdgeInsets.all(0),
+              tabs: [
+                Tab(child: Text('Week')),
+                Tab(child: Text('Month')),
+                Tab(child: Text('Year')),
+              ],
+            ),
+          ),
+          title: null,
+        ),
+        body: TabBarView(
+          children: [
+            Container(
+              color: Colors.white,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 300,
+                      child: PedometerBarChart(chartData),
+                    ),
+                    SizedBox(
+                      height: 300,
+                      child: PedometerBarChart(chartData),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Icon(Icons.directions_transit),
+            Icon(Icons.directions_bike),
+          ],
         ),
       ),
     );
