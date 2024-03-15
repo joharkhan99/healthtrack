@@ -5,6 +5,7 @@ ThemeData lightTheme = ThemeData(
   primaryColor: Colors.green,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: Colors.white,
+    // elevation: 0,
     selectedItemColor: Colors.green,
     unselectedItemColor: Colors.grey,
     selectedLabelStyle: TextStyle(color: Colors.green, fontSize: 12),

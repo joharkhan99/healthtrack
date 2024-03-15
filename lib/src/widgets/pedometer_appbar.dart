@@ -9,6 +9,8 @@ class PedometerAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.white,
       title: const Text(
         'TODAY',
         style: TextStyle(
