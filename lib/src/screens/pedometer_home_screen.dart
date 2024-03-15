@@ -3,6 +3,7 @@ import 'package:healthtrack/src/widgets/pedometer_appbar.dart';
 import 'package:healthtrack/src/widgets/pedometer_bottom_navigation.dart';
 import 'package:healthtrack/src/widgets/pedometer_liquid_progress.dart';
 import 'package:healthtrack/src/widgets/pedometer_statsbar.dart';
+import 'package:healthtrack/src/widgets/pedometer_weekday_stats.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,8 @@ class HomeScreen extends StatelessWidget {
               PedometerLiquidProgress(),
               SizedBox(height: 20),
               PedometerStatsbar(),
+              SizedBox(height: 8),
+              PedometerWeekdayStats(),
             ],
           ),
         ),
