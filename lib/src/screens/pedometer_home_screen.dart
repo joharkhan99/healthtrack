@@ -15,18 +15,20 @@ class HomeScreen extends StatelessWidget {
       appBar: PedometerAppBar(),
       bottomNavigationBar: PedoMeterBottomNavigation(),
       body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              PedometerLiquidProgress(),
-              SizedBox(height: 20),
-              PedometerStatsbar(),
-              SizedBox(height: 8),
-              PedometerWeekdayStats(),
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                PedometerLiquidProgress(),
+                SizedBox(height: 20),
+                PedometerStatsbar(),
+                SizedBox(height: 8),
+                PedometerWeekdayStats(),
+              ],
+            ),
           ),
         ),
       ),
