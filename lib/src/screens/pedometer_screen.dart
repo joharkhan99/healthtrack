@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:healthtrack/src/screens/pedometer_health.dart';
 import 'package:healthtrack/src/screens/pedometer_home.dart';
 import 'package:healthtrack/src/screens/pedometer_report.dart';
 import 'package:healthtrack/src/widgets/pedometer_appbar.dart';
 import 'package:healthtrack/src/widgets/pedometer_bottom_navigation.dart';
+import 'package:healthtrack/src/widgets/pedometer_health_appbar.dart';
 import 'package:healthtrack/src/widgets/pedometer_report_appbar.dart';
 
 class PedometerScreen extends StatefulWidget {
@@ -16,10 +18,12 @@ class _PedometerScreenState extends State<PedometerScreen> {
   final List<Widget> _pages = [
     const PedometerHome(),
     const PedometerReport(),
+    PedometerHealth(),
   ];
   final List<PreferredSizeWidget> _appBars = [
     const PedometerAppBar(),
     const PedometerReportAppBar(),
+    const PedometerHealthAppBar(),
   ];
 
   int _currentIndex = 0;
