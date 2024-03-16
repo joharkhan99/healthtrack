@@ -27,7 +27,9 @@ List<charts.Series<BarChartData, String>> _createSeries(List<BarChartData> data)
 
 class PedometerBarChart extends StatelessWidget {
   final List<BarChartData> data;
-  const PedometerBarChart(this.data, {super.key});
+  String label;
+  String emoji;
+  PedometerBarChart(this.data, this.label, this.emoji, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,18 +59,18 @@ class PedometerBarChart extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        const Row(
+        Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "👣",
-              style: TextStyle(fontSize: 14),
+              emoji,
+              style: const TextStyle(fontSize: 14),
             ),
-            SizedBox(width: 5),
+            const SizedBox(width: 5),
             Text(
-              "Steps",
-              style: TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
+              label,
+              style: const TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.bold),
             ),
           ],
         )

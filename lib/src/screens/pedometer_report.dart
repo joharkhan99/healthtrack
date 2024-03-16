@@ -25,21 +25,21 @@ class PedometerReport extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(0),
+            preferredSize: const Size.fromHeight(0),
             child: TabBar(
-              labelPadding: EdgeInsets.all(0),
-              labelStyle: TextStyle(
+              labelPadding: const EdgeInsets.all(0),
+              labelStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: Colors.green,
               ),
               labelColor: Colors.green,
               indicatorColor: Colors.green,
-              indicatorPadding: EdgeInsets.all(0),
+              indicatorPadding: const EdgeInsets.all(0),
               indicatorWeight: 4,
               unselectedLabelColor: Colors.grey,
               overlayColor: MaterialStateProperty.all(Colors.green.shade100),
-              tabs: [
+              tabs: const [
                 Tab(child: Text('DAY')),
                 Tab(child: Text('WEEK')),
                 Tab(child: Text('MONTH')),
@@ -53,17 +53,45 @@ class PedometerReport extends StatelessWidget {
             Container(
               color: Colors.white,
               child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   children: [
                     const PedometerReportStats(),
-                    PedometerBarChart(chartData),
+                    PedometerBarChart(chartData, 'Steps', '👣'),
+                    PedometerBarChart(chartData, 'Kcal', '🔥'),
+                    PedometerBarChart(chartData, 'Time', '⏰'),
                   ],
                 ),
               ),
             ),
-            Icon(Icons.directions_transit),
-            Icon(Icons.directions_bike),
+            Container(
+              color: Colors.white,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
+                    const PedometerReportStats(),
+                    PedometerBarChart(chartData, 'Steps', '👣'),
+                    PedometerBarChart(chartData, 'Kcal', '🔥'),
+                    PedometerBarChart(chartData, 'Time', '⏰'),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.white,
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
+                    const PedometerReportStats(),
+                    PedometerBarChart(chartData, 'Steps', '👣'),
+                    PedometerBarChart(chartData, 'Kcal', '🔥'),
+                    PedometerBarChart(chartData, 'Time', '⏰'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
