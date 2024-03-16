@@ -56,7 +56,7 @@ class PedometerBarChart extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 5),
         const Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -74,25 +74,5 @@ class PedometerBarChart extends StatelessWidget {
         )
       ],
     );
-
-    // charts.BarChart(
-    //   _createSeries(data),
-    //   vertical: true,
-    //   barRendererDecorator: charts.BarLabelDecorator<String>(),
-    //   primaryMeasureAxis: const charts.NumericAxisSpec(renderSpec: charts.NoneRenderSpec()),
-    //   domainAxis: charts.OrdinalAxisSpec(
-    //     renderSpec: charts.SmallTickRendererSpec(
-    //       labelStyle: charts.TextStyleSpec(
-    //         fontSize: 14,
-    //         fontWeight: FontWeight.w700.toString(),
-    //         color: charts.ColorUtil.fromDartColor(Colors.grey.shade400), // Set label color to green
-    //       ),
-    //     ),
-    //   ),
-    //   defaultRenderer: charts.BarRendererConfig(
-    //     barRendererDecorator: charts.BarLabelDecorator<String>(),
-    //     cornerStrategy: const charts.ConstCornerStrategy(3), // Remove bar corner radius
-    //   ),
-    // );
   }
 }
