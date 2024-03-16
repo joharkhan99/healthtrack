@@ -23,14 +23,25 @@ class PedometerReport extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          bottom: const PreferredSize(
+          bottom: PreferredSize(
             preferredSize: Size.fromHeight(0),
             child: TabBar(
               labelPadding: EdgeInsets.all(0),
+              labelStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Colors.green,
+              ),
+              labelColor: Colors.green,
+              indicatorColor: Colors.green,
+              indicatorPadding: EdgeInsets.all(0),
+              indicatorWeight: 4,
+              unselectedLabelColor: Colors.grey,
+              overlayColor: MaterialStateProperty.all(Colors.green.shade100),
               tabs: [
-                Tab(child: Text('Week')),
-                Tab(child: Text('Month')),
-                Tab(child: Text('Year')),
+                Tab(child: Text('DAY')),
+                Tab(child: Text('WEEK')),
+                Tab(child: Text('MONTH')),
               ],
             ),
           ),
@@ -41,16 +52,137 @@ class PedometerReport extends StatelessWidget {
             Container(
               color: Colors.white,
               child: SingleChildScrollView(
+                padding: EdgeInsets.symmetric(vertical: 20),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 300,
-                      child: PedometerBarChart(chartData),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Column(
+                        children: [
+                          Text(
+                            "2986",
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 50,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "Steps",
+                            style: TextStyle(
+                              color: Color.fromARGB(100, 0, 0, 0),
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    SizedBox(
-                      height: 300,
-                      child: PedometerBarChart(chartData),
+                    const SizedBox(height: 15),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "👣",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              SizedBox(width: 5),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "1.86",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Mile",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(100, 0, 0, 0),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          // SizedBox(width: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "🔥",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              SizedBox(width: 5),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "162",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Kcal",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(100, 0, 0, 0),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "⏰",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              SizedBox(width: 5),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "1h 21m",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Time",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(100, 0, 0, 0),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
+                    PedometerBarChart(chartData),
                   ],
                 ),
               ),
