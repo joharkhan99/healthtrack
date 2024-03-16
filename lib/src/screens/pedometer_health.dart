@@ -16,19 +16,20 @@ class PedometerHealth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Padding(
-      padding: const EdgeInsets.only(bottom: 30),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const PedometerHealthStats(),
-          const SizedBox(height: 20),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.5, child: PedometerPointChart(data)),
-          const SizedBox(height: 20),
-          const PedometerHealthBmi()
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const PedometerHealthStats(),
+            const SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.5, child: PedometerPointChart(data)),
+            const SizedBox(height: 20),
+            const PedometerHealthBmi()
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
