@@ -3,37 +3,48 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 
 class PedometerPointChart extends StatelessWidget {
-  final List<LinearSales> seriesList;
+  final List<TimeSeriesSales> seriesList;
 
   const PedometerPointChart(this.seriesList, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return charts.LineChart(
-      _createSampleData(seriesList),
+    // return charts.LineChart(
+    //   _createSampleData(seriesList),
+    //   animate: true,
+    //   defaultRenderer: charts.LineRendererConfig(includePoints: true),
+    // );
+
+    return charts.TimeSeriesChart(
+      _createSampleData(
+        seriesList,
+      ),
       animate: true,
       defaultRenderer: charts.LineRendererConfig(includePoints: true),
+      primaryMeasureAxis: const charts.NumericAxisSpec(
+        tickProviderSpec: charts.BasicNumericTickProviderSpec(zeroBound: false),
+      ),
     );
   }
 
-  /// Create one series with sample hard coded data.
-  static List<charts.Series<LinearSales, int>> _createSampleData(List<LinearSales> data) {
+  static List<charts.Series<TimeSeriesSales, DateTime>> _createSampleData(List<TimeSeriesSales> data) {
     return [
-      charts.Series<LinearSales, int>(
+      charts.Series<TimeSeriesSales, DateTime>(
         id: 'Sales',
-        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
-        domainFn: (LinearSales sales, _) => sales.year,
-        measureFn: (LinearSales sales, _) => sales.sales,
+        domainFn: (TimeSeriesSales sales, _) => sales.time,
+        measureFn: (TimeSeriesSales sales, _) => sales.sales,
         data: data,
+        colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault.lighter,
+        fillColorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
+        radiusPxFn: (datum, index) => 5,
       )
     ];
   }
 }
 
-/// Sample linear data type.
-class LinearSales {
-  final int year;
-  final int sales;
+class TimeSeriesSales {
+  final DateTime time;
+  final double sales;
 
-  LinearSales(this.year, this.sales);
+  TimeSeriesSales(this.time, this.sales);
 }
